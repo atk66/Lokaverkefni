@@ -1,21 +1,28 @@
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import MealCard from "./components/MealCard";
-import "./App.css";
 
 function App() {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const searchMeals = async (query) => {
     if (!query) return;
 
+    setHasSearched(true);
     setLoading(true);
-    const res = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
-    );
-    const data = await res.json();
-    setMeals(data.meals || []);
+
+    try {
+      const res = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+      );
+      const data = await res.json();
+      setMeals(data.meals || []);
+    } catch (error) {
+      console.error("Error fetching meals:", error);
+    }
+
     setLoading(false);
   };
 
@@ -28,7 +35,9 @@ function App() {
 
       <main className="meals">
         {loading && <p>Loading...</p>}
-        {!loading && meals.length === 0 && <p>No meals found 😢</p>}
+        {!loading && hasSearched && meals.length === 0 && (
+          <p>No meals found 😢</p>
+        )}
         {meals.map((meal) => (
           <MealCard key={meal.idMeal} meal={meal} />
         ))}

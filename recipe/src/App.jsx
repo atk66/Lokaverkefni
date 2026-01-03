@@ -34,8 +34,8 @@ function App() {
   return (
     <div>
       <header>
-        <h1>🍽️ Recipe Finder</h1>
-        <p>Search meals using TheMealDB API</p>
+        <h1>Uppskriftar leitarvél</h1>
+        <p>Finndu girnilegar uppskriftir</p>
       </header>
 
       <div className="search-box">

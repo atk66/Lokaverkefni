@@ -5,11 +5,11 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f8f8f8;
+  background: #000000;
 }
 
 header {
-  background: #ff7043;
+  background: #ff0000;
   color: white;
   padding: 20px;
   text-align: center;
@@ -31,8 +31,8 @@ header {
 .search-box button {
   padding: 10px 15px;
   font-size: 16px;
-  background: #ff7043;
-  color: white;
+  background: #07b624;
+  color: rgb(255, 255, 255);
   border: none;
   cursor: pointer;
 }
@@ -45,7 +45,7 @@ header {
 }
 
 .meal {
-  background: white;
+  background: rgb(0, 255, 179);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

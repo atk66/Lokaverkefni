@@ -1,47 +1,60 @@
 import { useState } from "react";
-import SearchBar from "./components/SearchBar";
 import MealCard from "./components/MealCard";
 
 function App() {
+  const [search, setSearch] = useState("");
   const [meals, setMeals] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false);
+  const [error, setError] = useState("");
 
-  const searchMeals = async (query) => {
-    if (!query) return;
+  const searchMeal = async () => {
+    if (!search) {
+      setError("Please enter a recipe name");
+      return;
+    }
 
-    setHasSearched(true);
-    setLoading(true);
+    setError("");
 
     try {
       const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
       );
       const data = await res.json();
-      setMeals(data.meals || []);
-    } catch (error) {
-      console.error("Error fetching meals:", error);
-    }
 
-    setLoading(false);
+      if (!data.meals) {
+        setMeals([]);
+        setError("No recipes found");
+      } else {
+        setMeals(data.meals);
+      }
+    } catch {
+      setError("Failed to fetch recipes");
+    }
   };
 
   return (
     <div>
-      <header className="header">
+      <header>
         <h1>🍽️ Recipe Finder</h1>
-        <SearchBar onSearch={searchMeals} />
+        <p>Search meals using TheMealDB API</p>
       </header>
 
-      <main className="meals">
-        {loading && <p>Loading...</p>}
-        {!loading && hasSearched && meals.length === 0 && (
-          <p>No meals found 😢</p>
-        )}
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="Search for a recipe..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button onClick={searchMeal}>Search</button>
+      </div>
+
+      {error && <p className="error">{error}</p>}
+
+      <div className="results">
         {meals.map((meal) => (
           <MealCard key={meal.idMeal} meal={meal} />
         ))}
-      </main>
+      </div>
     </div>
   );
 }

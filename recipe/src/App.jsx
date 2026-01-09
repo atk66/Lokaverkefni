@@ -8,7 +8,7 @@ function App() {
 
   const searchMeal = async () => {
     if (!search) {
-      setError("Please enter a recipe name");
+      setError("Skrifaðu nafn uppskriftar eða matar");
       return;
     }
 
@@ -22,12 +22,12 @@ function App() {
 
       if (!data.meals) {
         setMeals([]);
-        setError("No recipes found");
+        setError("Engar uppskriftir fundust");
       } else {
         setMeals(data.meals);
       }
     } catch {
-      setError("Failed to fetch recipes");
+      setError("Náði ekki að sækja uppskriftir");
     }
   };
 
@@ -41,7 +41,7 @@ function App() {
       <div className="search-box">
         <input
           type="text"
-          placeholder="Search for a recipe..."
+          placeholder="Leita af uppskrift"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

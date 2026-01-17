@@ -1,3 +1,5 @@
+Þessi síða gerir þér kleift að skoða, leita og vista uppskriftir sem þér lýst vel á. Þegar þú vistar uppskriftir, getur þú síðan nálgast þær allar á einum stað.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -1,12 +1,9 @@
 function MealCard({ meal }) {
   return (
-    <div className="meal">
-      <img src={meal.strMealThumb} alt={meal.strMeal} />
-      <div className="meal-content">
-        <h3>{meal.strMeal}</h3>
-        <p><strong>Category:</strong> {meal.strCategory}</p>
-        <p><strong>Area:</strong> {meal.strArea}</p>
-        <p>{meal.strInstructions.slice(0, 120)}...</p>
+    <div className="bg-white rounded shadow-lg hover:scale-105 transform transition duration-300 overflow-hidden">
+      <img src={meal.strMealThumb} alt={meal.strMeal} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold">{meal.strMeal}</h3>
       </div>
     </div>
   );

@@ -29,20 +29,20 @@ function MealCard({ meal }) {
   };
 
   return (
-    <div className="relative bg-white rounded shadow-lg hover:scale-105 transform transition duration-300 overflow-hidden">
+    <div className="leitartitill">
       <img
         src={meal.strMealThumb}
         alt={meal.strMeal}
-        className="w-full h-48 object-cover"
+        className="leitarmyndir"
       />
-      <div className="p-4">
-        <h3 className="text-lg font-semibold">{meal.strMeal}</h3>
+      <div className="leitartexti">
+        <h3 className="leitartexti">{meal.strMeal}</h3>
       </div>
 
       {}
       <button
         onClick={toggleFavorite}
-        className="absolute top-2 right-2 text-xl"
+        className="favbutton"
         title={isFavorite ? "Fjarlægja af lista" : "Bæta í lista"}
       >
         {isFavorite ? "⭐" : "☆"}

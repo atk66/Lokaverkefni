@@ -16,17 +16,17 @@ function MealDetail() {
 
   return (
     
-    <div className="max-w-3xl mx-auto p-6">
-          <button onClick={() => window.history.back()} className="text-blue-500 hover:underline mb-4">
+    <div className="recipetexti">
+          <button onClick={() => window.history.back()} className="backtexti">
   ← Til baka
 </button>
-      <h1 className="text-3xl font-bold mb-4">{meal.strMeal}</h1>
-      <img src={meal.strMealThumb} alt={meal.strMeal} className="w-full rounded mb-6" />
+      <h1 className="mealheiti">{meal.strMeal}</h1>
+      <img src={meal.strMealThumb} alt={meal.strMeal} className="mealimg" />
 
       
 
-      <h2 className="text-2xl font-semibold mb-2">Hráefni</h2>
-      <ul className="list-disc list-inside mb-4">
+      <h2 className="textihra">Hráefni</h2>
+      <ul className="textiinni">
         {Array.from({ length: 20 }).map((_, i) => {
           const ingredient = meal[`strIngredient${i + 1}`];
           const measure = meal[`strMeasure${i + 1}`];
@@ -37,7 +37,7 @@ function MealDetail() {
 
 
 
-      <h2 className="text-2xl font-semibold mb-2">Leiðbeiningar</h2>
+      <h2 className="textileid">Leiðbeiningar</h2>
       <p>{meal.strInstructions}</p>
     </div>
   );

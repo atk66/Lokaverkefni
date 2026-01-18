@@ -1,11 +1,7 @@
 .grid {
-  display: flex;
-  flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  flex-wrap: wrap;
 }
-
-
 
 .mealimg {
   display: block;
@@ -17,13 +13,16 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #7de2f0;
+  padding: 20px;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+
   padding: 20px;
 }
 
@@ -31,12 +30,14 @@ body {
 .card {
   border: 1px solid #ff2c2c;
   padding: 10px; 
+  
 }
 
 .favbutton{
   color: #000000;
-  background-color: rgb(156, 155, 155);
-  border-color: rgb(255, 255, 255);
+  background-color: rgb(146, 139, 238);
+  border-color: rgb(239, 142, 248);
+  border-radius: 5px;
 }
 
 .recipetexti {
@@ -52,13 +53,12 @@ body {
 }
 
 
-
 .linkur {
   color: #5f23ce;
+  margin: 10px;
   
 }
 
 .sidutitill {
   color: #8f0371;
 }
-

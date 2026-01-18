@@ -17,9 +17,9 @@ function MealDetail() {
   return (
     
     <div className="recipetexti">
-          <button onClick={() => window.history.back()} className="backtexti">
-  ← Til baka
-</button>
+          
+          <button onClick={() => window.history.back()} className="backtexti">← Til baka</button>
+
       <h1 className="mealheiti">{meal.strMeal}</h1>
       <img src={meal.strMealThumb} alt={meal.strMeal} className="mealimg" />
 
@@ -40,6 +40,7 @@ function MealDetail() {
       <h2 className="textileid">Leiðbeiningar</h2>
       <p>{meal.strInstructions}</p>
     </div>
+    
   );
 }
 

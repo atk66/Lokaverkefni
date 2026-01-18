@@ -29,25 +29,24 @@ function MealCard({ meal }) {
   };
 
   return (
+    
     <div className="leitartitill">
+      
       <img
         src={meal.strMealThumb}
         alt={meal.strMeal}
         className="leitarmyndir"
       />
+      
       <div className="leitartexti">
-        <h3 className="leitartexti">{meal.strMeal}</h3>
-      </div>
 
-      {}
-      <button
-        onClick={toggleFavorite}
-        className="favbutton"
-        title={isFavorite ? "Fjarlægja af lista" : "Bæta í lista"}
-      >
+        <button onClick={toggleFavorite} className="favbutton" title={isFavorite ? "Fjarlægja af lista" : "Bæta í lista"}>
         {isFavorite ? "⭐" : "☆"}
       </button>
-    </div>
+      
+        <h3 className="leitartexti">{meal.strMeal}</h3>
+      </div>
+      </div>
   );
 }
 

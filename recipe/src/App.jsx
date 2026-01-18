@@ -4,6 +4,7 @@ import MealDetail from "./pages/MealDetail";
 import NotFound from "./pages/NotFound";
 import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
+import "./index.css";
 
 function App() {
   return (

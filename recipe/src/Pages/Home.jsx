@@ -6,15 +6,15 @@ function Home() {
   const [meals, setMeals] = useState([]);
   const [query, setQuery] = useState("");
 
-  // Fetch meals (default is "chicken")
+
   useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
+    fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
       .then(res => res.json())
       .then(data => setMeals(data.meals || []))
       .catch(err => console.error(err));
   }, []);
 
-  // Optional: search handler
+
   const handleSearch = () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
       .then(res => res.json())
@@ -36,10 +36,7 @@ function Home() {
         />
         <button
           onClick={handleSearch}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Leita
-        </button>
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leita</button>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

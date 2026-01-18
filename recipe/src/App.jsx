@@ -6,6 +6,9 @@ import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
 import "./index.css";
 
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +18,7 @@ function App() {
         <Route path="/meal/:id" element={<MealDetail />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
+      
       </Routes>
     </BrowserRouter>
   );

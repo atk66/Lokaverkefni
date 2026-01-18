@@ -21,10 +21,6 @@ body {
   padding: 20px;
 }
 
-.container {
-
-  padding: 20px;
-}
 
 
 .card {
@@ -38,10 +34,12 @@ body {
   background-color: rgb(146, 139, 238);
   border-color: rgb(239, 142, 248);
   border-radius: 5px;
+  
 }
 
 .recipetexti {
  color:#000000;
+ 
 }
 
 .backtexti {
@@ -57,8 +55,38 @@ body {
   color: #5f23ce;
   margin: 10px;
   
+  
 }
+
+.linkar{
+  background-color: #bda6e7;
+  display: flex;
+  justify-content: center;
+  
+}
+
 
 .sidutitill {
   color: #8f0371;
+  
+   }
+  
+.titill{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  }
+
+  .container {
+  padding: 20px;
+
 }
+
+  .leitin {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    background-color: #6a8bf7;
+    border-color: #e1d4f8;
+  
+  }

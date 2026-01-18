@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import MealCard from "../components/MealCard";
 
+
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
 

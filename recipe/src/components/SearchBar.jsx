@@ -9,7 +9,7 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="leitin">
       <input
         placeholder="Finna uppskriftir..."
         value={query}
